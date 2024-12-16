@@ -2,7 +2,7 @@ const { CronJob } = require('cron'); // Use the `cron` package for scheduling
 
 module.exports = (bot, message) => {
     const { text, chat, message_id, from } = message;
-    const botName = bot.username; // Get the bot's username
+    const botName = "ChatIDBot"; // Replace with your bot's name (static)
     const userName = from.username || from.first_name; // Get user's username or first name
 
     try {
@@ -17,9 +17,9 @@ module.exports = (bot, message) => {
             
             👉 To get started, choose one of the options below.
             
-            📱 If you need any help or want to reach out to me directly, feel free to [contact me](https://t.me/your_telegram_handle) on Telegram!
+            📱 If you need any help or want to reach out to me directly, feel free to contact me on Telegram: @tamecalm.
 
-            🎉 Enjoy using <b>${botName}</b>! Let’s make this quick and fun! 🎉
+            🎉 Enjoy using <b>${botName}</b>! Let's make this quick and fun! 🎉
             `;
 
             const options = {
@@ -44,7 +44,7 @@ module.exports = (bot, message) => {
 
             1️⃣ Use <b>/id</b> to get the ID of this chat (whether it’s a user, group, or channel).
 
-            2️⃣ If you need further assistance or have any questions, feel free to reach out to me directly on Telegram via [this link](https://t.me/your_telegram_handle).
+            2️⃣ If you need further assistance or have any questions, feel free to reach out to me directly on Telegram: @tamecalm.
 
             <i>I'm here to help! 😊</i>
             `;

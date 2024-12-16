@@ -4,6 +4,6 @@ const routeUpdates = require('./routes');
 
 const bot = new TelegramBot(botToken, { polling: true });
 
-bot.on('message', (message) => routeUpdates(bot, message));
+bot.on('message', (message) => routeUpdates(bot, message));  // Route messages
 
 module.exports = bot;

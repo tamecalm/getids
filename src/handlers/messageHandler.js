@@ -1,5 +1,4 @@
 const validation = require('../utils/validation');
-const bot = require('../bot');  // Ensure you import the bot instance
 
 module.exports = (bot, message) => {
     const { chat, text, from, message_id } = message;
@@ -73,26 +72,3 @@ const scheduleAutoDelete = (bot, chatId, messageId) => {
         bot.deleteMessage(chatId, messageId).catch(() => {}); // Silent fail in case of an issue
     }, oneDayInMs);
 };
-
-// Handle inline button presses (e.g., to delete the message or get help)
-bot.on('callback_query', (callbackQuery) => {
-    const { data, message, from } = callbackQuery;
-    const { chat, message_id } = message;
-
-    try {
-        if (data.startsWith('delete_')) {
-            // Delete the message when the "Delete this message" button is clicked
-            bot.deleteMessage(chat.id, message_id).catch(() => {}); // Silent fail
-            bot.sendMessage(chat.id, '✅ Message deleted successfully!');
-        } else if (data === 'get_help') {
-            // Provide help information when the "Get Help" button is clicked
-            bot.sendMessage(chat.id, '🔧 Use /id to get the ID of this chat (user, group, or channel).');
-        }
-
-        // Acknowledge callback query to remove the loading state from the button
-        bot.answerCallbackQuery(callbackQuery.id);
-    } catch (error) {
-        console.error(error); // Log error for debugging
-        bot.sendMessage(chat.id, '❗ An error occurred while processing your request. Please try again later.');
-    }
-});

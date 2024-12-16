@@ -8,16 +8,16 @@ module.exports = (bot, message) => {
     bot.getMe().then(botInfo => {
         const botName = botInfo.first_name; // Dynamic bot name
         const userMessage = `
-            👋 <b>Hey ${userName}!</b> Welcome to <b>${botName}</b>! 🚀
+👋 <b>Hey ${userName}!</b> Welcome to <b>${botName}</b>! 🚀
             
-            I'm here to help you easily find the ID of any chat: whether it's a group, user, or channel. 
-            No hassle, just a quick click! 😎
+I'm here to help you easily find the ID of any chat: whether it's a group, user, or channel. 
+No hassle, just a quick click! 😎
             
-            👉 To get started, choose one of the options below.
+👉 To get started, choose one of the options below.
             
-            📱 If you need any help or want to reach out to me directly, feel free to contact me on Telegram: @tamecalm.
+📱 If you need any help or want to reach out to me directly, feel free to contact me on Telegram: @tamecalm.
 
-            🎉 Enjoy using <b>${botName}</b>! Let's make this quick and fun! 🎉
+🎉 Enjoy using <b>${botName}</b>! Let's make this quick and fun! 🎉
         `;
 
         const options = {
@@ -44,13 +44,13 @@ module.exports = (bot, message) => {
     // Handle /help command
     if (text === '/help') {
         const helpMessage = `
-        🔧 <b>Need help?</b> Here’s what you can do:
+🔧 <b>Need help?</b> Here’s what you can do:
 
-        1️⃣ Use <b>/id</b> to get the ID of this chat (whether it’s a user, group, or channel).
+1️⃣ Use <b>/id</b> to get the ID of this chat (whether it’s a user, group, or channel).
 
-        2️⃣ If you need further assistance or have any questions, feel free to reach out to me directly on Telegram: @tamecalm.
+2️⃣ If you need further assistance or have any questions, feel free to reach out to me directly on Telegram: @tamecalm.
 
-        <i>I'm here to help! 😊</i>
+<i>I'm here to help! 😊</i>
         `;
 
         bot.sendMessage(chat.id, helpMessage, { parse_mode: 'HTML' }).then(sentMessage => {

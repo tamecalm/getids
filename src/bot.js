@@ -14,22 +14,26 @@ bot.on('callback_query', (callbackQuery) => {
 
     try {
         if (data === 'get_chat_id') {
-            bot.sendMessage(chat.id, `This is the ID of the current chat: <code>${chat.id}</code>`, { parse_mode: 'HTML' });
-        } else if (data === 'delete_message') {
-            bot.deleteMessage(chat.id, message_id).catch(() => {}); // Silent fail
-            bot.sendMessage(chat.id, '✅ Message deleted! Have a nice day!');
+            // Show chat name for group or channel (or user ID if private)
+            const chatName = chat.type === 'private' ? from.first_name : chat.title;
+            bot.sendMessage(chat.id, `This is the ID of the current chat (${chatName}): <code>${chat.id}</code>`, { parse_mode: 'HTML' });
         } else if (data === 'get_help') {
+            // Send help message when 'Get Help' button is pressed
             bot.sendMessage(chat.id, '🔧 Use /id to get the ID of this chat (user, group, or channel).');
         } else if (data === 'get_id') {
-            bot.sendMessage(chat.id, `The ID of this <b>${chat.type}</b> is: <code>${chat.id}</code>`, {
-                parse_mode: 'HTML'
-            });
+            // Send specific ID of the current chat (user/group/channel)
+            const chatName = chat.type === 'private' ? from.first_name : chat.title;
+            bot.sendMessage(chat.id, `The ID of this <b>${chatName}</b> is: <code>${chat.id}</code>`, { parse_mode: 'HTML' });
         }
 
-        // Acknowledge callback query to remove the loading state on the button
+        // Acknowledge callback query to remove loading state from the button
         bot.answerCallbackQuery(callbackQuery.id);
+
+        // Delete the message after processing (if necessary)
+        bot.deleteMessage(chat.id, message_id).catch(() => {});
+        
     } catch (error) {
-        console.error(error); // Log error on the server side
+        console.error(error); // Log error for debugging
     }
 });
 

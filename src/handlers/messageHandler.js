@@ -44,20 +44,24 @@ module.exports = (bot, message) => {
             );
         }
 
-        // Adding buttons for user interaction
+        // Adding "Get Help" button for user interaction
         const options = {
             reply_markup: {
                 inline_keyboard: [
-                    [{ text: 'Delete this message', callback_data: `delete_${message_id}` }],
                     [{ text: 'Get Help', callback_data: 'get_help' }]
                 ]
             }
         };
 
+        // Send a message with the help button
         bot.sendMessage(chat.id, 'Choose an option:', options);
 
         // Schedule auto-delete of the message after 24 hours
         scheduleAutoDelete(bot, chat.id, message_id);
+
+        // Delete the original message after processing (to clean up)
+        bot.deleteMessage(chat.id, message_id).catch(() => {});
+        
     } catch (error) {
         // Handle any unexpected errors gracefully, without showing them to the user
         console.error(error); // Log error on the server side for debugging

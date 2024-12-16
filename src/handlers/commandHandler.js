@@ -6,26 +6,38 @@ module.exports = (bot, message) => {
     try {
         // Handle /start command
         if (text === '/start') {
+            // Make the welcome message unique and smooth
+            const welcomeMessage = `
+                👋 Hey there! Welcome to the chat ID Bot!
+                
+                I'm here to help you quickly get the ID of any chat, be it a group, user, or channel. 
+                Simply choose the right option below to get started.
+                
+                If you need any help or want to contact me directly, you can reach out to me via my [Telegram Handle](https://t.me/your_telegram_handle).
+                
+                Enjoy using the bot! 😄
+            `;
+
             const options = {
                 reply_markup: {
                     inline_keyboard: [
-                        [{ text: 'Get Chat ID', callback_data: 'get_chat_id' }],
-                        [{ text: 'Delete Message', callback_data: 'delete_message' }]
+                        [{ text: 'Get Chat ID', callback_data: 'get_chat_id' }]
                     ]
-                }
+                },
+                parse_mode: 'Markdown' // Use Markdown to make the contact link clickable
             };
-            bot.sendMessage(chat.id, 'Welcome! Add me to a group or channel to get its ID.', options);
+
+            // Send the smooth welcome message with a contact link
+            bot.sendMessage(chat.id, welcomeMessage, options);
+
+            // Delete the /start command message after sending
+            bot.deleteMessage(chat.id, message_id).catch(() => {});
         }
         // Handle /help command
         else if (text === '/help') {
-            const options = {
-                reply_markup: {
-                    inline_keyboard: [
-                        [{ text: 'Get Help', callback_data: 'get_help' }]
-                    ]
-                }
-            };
-            bot.sendMessage(chat.id, 'Use /id to get the ID of this chat (user, group, or channel).', options);
+            bot.sendMessage(chat.id, '🔧 Use /id to get the ID of this chat (user, group, or channel).');
+            // Delete the /help command message after sending
+            bot.deleteMessage(chat.id, message_id).catch(() => {});
         }
         // Handle /id command
         else if (text === '/id') {
@@ -41,7 +53,10 @@ module.exports = (bot, message) => {
                 reply_markup: options.reply_markup
             });
 
-            // Schedule auto-delete after 24 hours
+            // Delete the /id command message after sending
+            bot.deleteMessage(chat.id, message_id).catch(() => {});
+            
+            // Schedule auto-delete after 24 hours (Cron job will also check)
             scheduleAutoDelete(bot, chat.id, message_id);
         }
     } catch (error) {

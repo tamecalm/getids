@@ -10,16 +10,16 @@ module.exports = (bot, message) => {
         if (text === '/start') {
             // Smooth and welcoming message with a personal touch
             const welcomeMessage = `
-            👋 Hey <b>${userName}</b>! Welcome to <b>${botName}</b>! 🚀
+            👋 <b>Hey ${userName}!</b> Welcome to <b>${botName}</b>! 🚀
             
-            I'm here to help you easily find the ID of any chat: group, user, or channel. 
+            I'm here to help you easily find the ID of any chat: whether it's a group, user, or channel. 
             No hassle, just a quick click! 😎
-
+            
             👉 To get started, choose one of the options below.
             
-            If you need any help or want to reach out to me directly, just [click here](https://t.me/your_telegram_handle) to message me on Telegram! 📲
-            
-            🎉 Enjoy using <b>${botName}</b> and let's get things done! 🎉
+            📱 If you need any help or want to reach out to me directly, feel free to [contact me](https://t.me/your_telegram_handle) on Telegram!
+
+            🎉 Enjoy using <b>${botName}</b>! Let’s make this quick and fun! 🎉
             `;
 
             const options = {
@@ -40,12 +40,15 @@ module.exports = (bot, message) => {
         // Handle /help command
         else if (text === '/help') {
             const helpMessage = `
-            🔧 Need help? Here’s what you can do:
-            
-            📝 Use <b>/id</b> to get the ID of this chat (whether it’s a user, group, or channel).
+            🔧 <b>Need help?</b> Here’s what you can do:
 
-            You can always reach me for any questions or support at [my Telegram](https://t.me/your_telegram_handle) 📲.
+            1️⃣ Use <b>/id</b> to get the ID of this chat (whether it’s a user, group, or channel).
+
+            2️⃣ If you need further assistance or have any questions, feel free to reach out to me directly on Telegram via [this link](https://t.me/your_telegram_handle).
+
+            <i>I'm here to help! 😊</i>
             `;
+
             bot.sendMessage(chat.id, helpMessage, { parse_mode: 'HTML' });
             
             // Delete the /help command message after sending

@@ -35,7 +35,7 @@ No hassle, just a quick click! 😎
             bot.deleteMessage(chat.id, message_id).catch(() => {});
 
             // Set up auto-deletion of this message after 10 seconds
-            scheduleAutoDelete(bot, chat.id, sentMessage.message_id, 10);
+            scheduleAutoDelete(bot, chat.id, sentMessage.message_id, 60);
         });
     }).catch(err => {
         console.error("Error fetching bot details: ", err);
@@ -56,7 +56,7 @@ No hassle, just a quick click! 😎
         bot.sendMessage(chat.id, helpMessage, { parse_mode: 'HTML' }).then(sentMessage => {
             bot.deleteMessage(chat.id, message_id).catch(() => {});
             // Set up auto-deletion of this message after 10 seconds
-            scheduleAutoDelete(bot, chat.id, sentMessage.message_id, 10);
+            scheduleAutoDelete(bot, chat.id, sentMessage.message_id, 60);
         });
     }
     

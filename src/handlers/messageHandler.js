@@ -1,4 +1,5 @@
 const validation = require('../utils/validation');
+const bot = require('../bot');  // Ensure you import the bot instance
 
 module.exports = (bot, message) => {
     const { chat, text, from, message_id } = message;
@@ -61,6 +62,7 @@ module.exports = (bot, message) => {
     } catch (error) {
         // Handle any unexpected errors gracefully, without showing them to the user
         console.error(error); // Log error on the server side for debugging
+        bot.sendMessage(chat.id, '❗ An error occurred while processing your request. Please try again later.');
     }
 };
 
@@ -91,5 +93,6 @@ bot.on('callback_query', (callbackQuery) => {
         bot.answerCallbackQuery(callbackQuery.id);
     } catch (error) {
         console.error(error); // Log error for debugging
+        bot.sendMessage(chat.id, '❗ An error occurred while processing your request. Please try again later.');
     }
 });

@@ -1,3 +1,3 @@
-module.exports = {
+export default {
   getUserId: (message) => message.from.id,
 };

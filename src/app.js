@@ -1,8 +1,8 @@
-const bot = require("./bot");
-const express = require("express");
-const { CronJob } = require("cron");
-const process = require("process");
-const fs = require("fs");
+import bot from "./bot";
+import express from "express";
+import { CronJob } from "cron";
+import process from "process";
+import fs from "fs";
 
 // Create an Express app for health checks
 const app = express();
@@ -96,3 +96,5 @@ bot.onText(/\/restart/, (msg) => {
     process.exit(0); // Forces the bot to restart
   }, 2000);
 });
+
+export { logMessage };

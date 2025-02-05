@@ -1,7 +1,8 @@
-const TelegramBot = require("node-telegram-bot-api");
-const { botToken } = require("./config/botConfig");
-const routeUpdates = require("./routes");
+import TelegramBot from "node-telegram-bot-api";
+import { botToken } from "config/botConfig";
+import routeUpdates from "./routes";
 
+// Create the bot instance
 const bot = new TelegramBot(botToken, { polling: true });
 
 // Listen for incoming messages and route them to the appropriate handler
@@ -47,4 +48,5 @@ bot.on("callback_query", (callbackQuery) => {
   }
 });
 
-module.exports = bot;
+// Export bot to be used in other files
+export default bot;

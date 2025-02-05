@@ -1,6 +1,4 @@
-const { CronJob } = require("cron"); // Use the `cron` package for scheduling
-
-module.exports = (bot, message) => {
+export default (bot, message) => {
   const { text, chat, message_id, from } = message;
   const userName = from.username || from.first_name; // Get user's username or first name
 
@@ -36,7 +34,7 @@ No hassle, just a quick click! 😎
         // Delete the /start command message after sending
         bot.deleteMessage(chat.id, message_id).catch(() => {});
 
-        // Set up auto-deletion of this message after 10 seconds
+        // Set up auto-deletion of this message after 60 seconds
         scheduleAutoDelete(bot, chat.id, sentMessage.message_id, 60);
       });
     })
@@ -60,7 +58,7 @@ No hassle, just a quick click! 😎
       .sendMessage(chat.id, helpMessage, { parse_mode: "HTML" })
       .then((sentMessage) => {
         bot.deleteMessage(chat.id, message_id).catch(() => {});
-        // Set up auto-deletion of this message after 10 seconds
+        // Set up auto-deletion of this message after 60 seconds
         scheduleAutoDelete(bot, chat.id, sentMessage.message_id, 60);
       });
   }
@@ -92,13 +90,13 @@ No hassle, just a quick click! 😎
         // Delete the /id command message after sending
         bot.deleteMessage(chat.id, message_id).catch(() => {});
 
-        // Schedule auto-delete after 24 hours (Cron job will also check)
+        // Schedule auto-delete after 10 seconds
         scheduleAutoDelete(bot, chat.id, sentMessage.message_id, 10);
       });
   }
 };
 
-// Function to schedule message deletion after 10 seconds
+// Function to schedule message deletion after a specified timeout
 const scheduleAutoDelete = (bot, chatId, messageId, timeoutInSeconds) => {
   const timeoutInMs = timeoutInSeconds * 1000; // Convert seconds to milliseconds
   setTimeout(() => {

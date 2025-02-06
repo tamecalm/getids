@@ -37,3 +37,43 @@
 2025-02-06T09:56:53.362Z - Bot restart triggered by user
 2025-02-06T09:57:33.609Z - Bot started successfully
 2025-02-06T10:01:34.145Z - Bot shutting down...
+2025-02-06T10:03:35.794Z - Bot started successfully
+2025-02-06T10:25:37.495Z - Bot shutting down...
+2025-02-06T10:25:43.224Z - Bot started successfully
+2025-02-06T10:29:06.442Z - Bot shutting down...
+2025-02-06T10:29:09.002Z - Bot started successfully
+2025-02-06T11:23:55.504Z - Polling Error: EFATAL: Error: read ETIMEDOUT
+2025-02-06T11:24:06.652Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:24:16.974Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:24:27.299Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:24:37.618Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:24:47.936Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:24:58.254Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:25:08.608Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:25:18.932Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:25:29.256Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:25:39.576Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:25:49.892Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:26:00.209Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:26:10.528Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:26:20.849Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:26:31.168Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:26:41.488Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:26:51.805Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:27:02.117Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:27:12.437Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:27:22.756Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:27:33.070Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:27:43.387Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:27:53.723Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:28:04.037Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:28:14.353Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:28:24.672Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:28:34.987Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T11:28:41.968Z - Polling Error: EFATAL: AggregateError
+2025-02-06T11:29:09.132Z - Sent periodic message to YOUR_CHAT_ID
+2025-02-06T11:29:10.419Z - Unhandled Rejection: Error: ETELEGRAM: 400 Bad Request: chat not found
+2025-02-06T12:29:09.068Z - Sent periodic message to YOUR_CHAT_ID
+2025-02-06T12:29:09.850Z - Unhandled Rejection: Error: ETELEGRAM: 400 Bad Request: chat not found
+2025-02-06T12:40:37.921Z - Bot shutting down...
+2025-02-06T12:40:55.484Z - Bot started successfully

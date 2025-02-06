@@ -7,6 +7,32 @@ import fs from "fs";
 // Create an Express app for health checks
 const app = express();
 const port = process.env.PORT || 3000;
+// Store user interactions (in-memory)
+const interactions = [];
+
+// Middleware to log bot interactions
+bot.on("message", (msg) => {
+  const { text, chat, from } = msg;
+  const logEntry = {
+    user: from.username || from.first_name,
+    userId: from.id,
+    chatId: chat.id,
+    message: text,
+    time: new Date().toLocaleString(),
+  };
+
+  console.log("User Interaction:", logEntry); // Log to console
+  interactions.push(logEntry); // Save in memory (resets on restart)
+});
+
+// Route to check user interactions
+app.get("/check", (req, res) => {
+  res.json({
+    status: "success",
+    total_interactions: interactions.length,
+    interactions,
+  });
+});
 
 // Basic health check route
 app.get("/health", async (req, res) => {

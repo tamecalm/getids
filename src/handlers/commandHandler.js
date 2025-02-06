@@ -11,7 +11,7 @@ export default (bot, message) => {
         const userMessage = `
 👋 <b>Hey ${userName}!</b> Welcome to <b>${botName}</b>! 🚀
 
-I'm here to help you find the ID of any chat: group, user, or channel. Just click the button below.
+I'm here to help you find the ID of any chat: group, user, or channel.
 
 📱 For help, contact me on Telegram: @tamecalm.
 
@@ -19,11 +19,6 @@ I'm here to help you find the ID of any chat: group, user, or channel. Just clic
         `;
 
         const options = {
-          reply_markup: {
-            inline_keyboard: [
-              [{ text: "Get Chat ID 📜", callback_data: "get_chat_id" }],
-            ],
-          },
           parse_mode: "HTML", // Use HTML for bold formatting
         };
 
@@ -43,7 +38,7 @@ I'm here to help you find the ID of any chat: group, user, or channel. Just clic
     const donateMessage = `
 🎉 <b>Support the Developer</b> 🎉
 
-👋 Hey there! If you find this bot helpful and want to support the developer, you can donate any amount you like. Your contribution will help in maintaining and improving this bot for you and others to enjoy. 🚀
+👋 Hey ${userName}! If you find this bot helpful and want to support the developer, you can donate any amount you like. Your contribution will help in maintaining and improving this bot for you and others to enjoy. 🚀
 
 👉 <b>Donate via PayPal:</b> [PayPal.Me](https://www.paypal.me/yourusername)
 
@@ -60,27 +55,11 @@ I'm here to help you find the ID of any chat: group, user, or channel. Just clic
 
   // Handle /id command
   else if (text === "/id") {
-    const options = {
-      reply_markup: {
-        inline_keyboard: [
-          [
-            {
-              text: `Get ID for this ${chat.type} 🆔`,
-              callback_data: "get_id",
-            },
-          ],
-        ],
-      },
-    };
-
     bot
       .sendMessage(
         chat.id,
         `🔑 The ID of this <b>${chat.type}</b> is: <code>${chat.id}</code>`,
-        {
-          parse_mode: "HTML",
-          reply_markup: options.reply_markup,
-        }
+        { parse_mode: "HTML" }
       )
       .then((sentMessage) => {
         bot.deleteMessage(chat.id, message_id).catch(() => {});
@@ -94,21 +73,13 @@ I'm here to help you find the ID of any chat: group, user, or channel. Just clic
 🚀 <b>How to Use This Bot</b> 🚀 
 
 1. Start the bot by clicking the /start command.
-2. Click the "Get Chat ID" button to see the chat ID.
-3. Use the /id command to get the ID of the current chat.
-4. Use the /donate command to support the developer.
-5. Enjoy using the bot! 🎉
+2. Use the /id command to get the ID of the current chat.
+3. Use the /donate command to support the developer.
+4. Enjoy using the bot! 🎉
 
 📱 For any issues or feedback, contact the developer: @tamecalm.
 
 🙏 Thank you for using this bot! ❤️
-
-🤖 <b>Bot Commands:</b>
-/start - Start the bot
-/id - Get the ID of the current chat
-/donate - Support the developer
-
-🎉 <b>Enjoy using this bot!</b> 🎉
   `;
 
     bot

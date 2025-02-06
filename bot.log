@@ -29,3 +29,11 @@
 2025-02-06T08:55:45.882Z - Bot started successfully
 2025-02-06T09:01:35.726Z - Bot shutting down...
 2025-02-06T09:01:38.501Z - Bot started successfully
+2025-02-06T09:51:53.088Z - Unhandled Rejection: Error: ETELEGRAM: 400 Bad Request: not enough rights to send text messages to the chat
+2025-02-06T09:52:00.255Z - Unhandled Rejection: Error: ETELEGRAM: 400 Bad Request: not enough rights to send text messages to the chat
+2025-02-06T09:52:11.290Z - Unhandled Rejection: Error: ETELEGRAM: 400 Bad Request: not enough rights to send text messages to the chat
+2025-02-06T09:55:41.302Z - Bot restart triggered by user
+2025-02-06T09:56:49.747Z - Bot started successfully
+2025-02-06T09:56:53.362Z - Bot restart triggered by user
+2025-02-06T09:57:33.609Z - Bot started successfully
+2025-02-06T10:01:34.145Z - Bot shutting down...

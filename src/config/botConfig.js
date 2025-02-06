@@ -1,5 +1,6 @@
-require('dotenv').config();
+import("dotenv").config();
+import process from "node:process";
 
-module.exports = {
-    botToken: process.env.BOT_TOKEN,
+export default {
+  botToken: process.env.BOT_TOKEN,
 };

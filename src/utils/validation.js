@@ -22,7 +22,7 @@ export default {
   },
 
   // Custom validation function example (validates if a user is in a specific group)
-  isUserInGroup: (userId, groupId) => {
+  isUserInGroup: () => {
     // This would need additional logic, like querying a database or an API
     // For now, returning true as a placeholder
     return true;

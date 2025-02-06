@@ -60,7 +60,7 @@ process.on("uncaughtException", (error) => {
   logMessage(`Uncaught Exception: ${error.message}`);
 });
 
-process.on("unhandledRejection", (reason, promise) => {
+process.on("unhandledRejection", (reason) => {
   console.error("Unhandled Rejection:", reason);
   logMessage(`Unhandled Rejection: ${reason}`);
 });

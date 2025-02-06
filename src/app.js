@@ -1,6 +1,8 @@
 import bot from "./bot.js";
 import express from "express";
 import { CronJob } from "cron";
+import connectDB from "./db.js";
+import adminController from "./controllers/adminController.js";
 import process from "process";
 import fs from "fs";
 import path from "path";
@@ -8,6 +10,13 @@ import path from "path";
 // Create an Express app for health checks
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Connect to MongoDB
+connectDB();
+
+// Uss the admin controller
+app.use("/admin", adminController);
+
 // Store user interactions (in-memory)
 const interactions = [];
 

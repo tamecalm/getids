@@ -1,1 +1,5 @@
+# Ignore .env files to keep secrets safe
 .env
+
+# Ignore bot.log files
+bot.log

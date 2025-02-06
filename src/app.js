@@ -1,4 +1,4 @@
-import bot from "./bot";
+import bot from "./bot.js";
 import express from "express";
 import { CronJob } from "cron";
 import process from "process";

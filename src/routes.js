@@ -1,5 +1,5 @@
-import handleMessage from "./handlers/messageHandler";
-import handleCommand from "./handlers/commandHandler";
+import handleMessage from "./handlers/messageHandler.js";
+import handleCommand from "./handlers/commandHandler.js";
 
 const routeUpdates = (bot, message) => {
   if (message.text && message.text.startsWith("/")) {

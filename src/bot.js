@@ -1,6 +1,9 @@
 import TelegramBot from "node-telegram-bot-api";
-import { botToken } from "config/botConfig";
-import routeUpdates from "./routes";
+import botConfig from "./config/botConfig.js";
+import routeUpdates from "./routes.js";
+
+// Creating an export name for botToken to be used in other files
+const { botToken } = botConfig;
 
 // Create the bot instance
 const bot = new TelegramBot(botToken, { polling: true });

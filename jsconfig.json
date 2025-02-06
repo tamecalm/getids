@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "ESNext", // Enables support for the latest ECMAScript features, including ES6 modules.
+    "moduleResolution": "Node", // Uses Node.js module resolution strategy, which is useful for resolving modules in a Node.js environment.
+    "baseUrl": "./", // Sets the base directory for resolving non-relative module names.
+    "paths": {
+      "": ["src/"] // Maps the root import path to the "src" directory, simplifying module imports.
+    }
+  }
+}

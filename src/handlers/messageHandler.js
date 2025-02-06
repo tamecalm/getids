@@ -1,4 +1,4 @@
-import validation from "../utils/validation";
+import validation from "../utils/validation.js";
 
 export default (bot, message) => {
   const { chat, text, from, message_id } = message;
@@ -28,6 +28,16 @@ export default (bot, message) => {
       bot.sendMessage(chat.id, `👤 Your User ID is: <code>${from.id}</code>`, {
         parse_mode: "HTML",
       });
+      // else if forwarded message from a channel or group or supergroup or user
+      if (message.forward_from) {
+        bot.sendMessage(
+          chat.id,
+          `👤 Forwarded User ID is: <code>${message.forward_from.id}</code>`,
+          {
+            parse_mode: "HTML",
+          }
+        );
+      }
     } else if (chat.type === "group" || chat.type === "supergroup") {
       // For groups or supergroups (Group ID)
       bot.sendMessage(chat.id, `🗣️ This Group ID is: <code>${chat.id}</code>`, {
@@ -41,16 +51,6 @@ export default (bot, message) => {
         { parse_mode: "HTML" }
       );
     }
-
-    // Adding "Get Help" button for user interaction
-    const options = {
-      reply_markup: {
-        inline_keyboard: [[{ text: "Get Help", callback_data: "get_help" }]],
-      },
-    };
-
-    // Send a message with the help button
-    bot.sendMessage(chat.id, "Choose an option:", options);
 
     // Schedule auto-delete of the message after 24 hours
     scheduleAutoDelete(bot, chat.id, message_id);

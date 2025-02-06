@@ -3,6 +3,7 @@ import express from "express";
 import { CronJob } from "cron";
 import process from "process";
 import fs from "fs";
+import path from "path";
 
 // Create an Express app for health checks
 const app = express();
@@ -76,12 +77,43 @@ console.log("Bot is running...");
 logMessage("Bot started successfully");
 
 // Periodic Task Example: Send a daily reminder message at 9:00 AM
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const chatIdsFilePath = path.join(__dirname, "chatIds.json");
+
+// Load chat IDs from file
+let chatIds = [];
+if (fs.existsSync(chatIdsFilePath)) {
+  chatIds = JSON.parse(fs.readFileSync(chatIdsFilePath));
+}
+
+// Save chat IDs to file
+const saveChatIds = () => {
+  fs.writeFileSync(chatIdsFilePath, JSON.stringify(chatIds));
+};
+
+// Add chat ID to the list if not already present
+const addChatId = (chatId) => {
+  if (!chatIds.includes(chatId)) {
+    chatIds.push(chatId);
+    saveChatIds();
+  }
+};
+
+// Listen for new chat members
+bot.on("message", (msg) => {
+  const chatId = msg.chat.id;
+  addChatId(chatId);
+});
+
 const dailyReminderJob = new CronJob(
   "0 9 * * *",
   () => {
-    const chatId = "YOUR_CHAT_ID"; // Replace with your desired chat ID for the daily reminder
-    bot.sendMessage(chatId, "Good morning! This is your daily reminder.");
-    logMessage("Sent daily reminder message");
+    chatIds.forEach((chatId) => {
+      bot.sendMessage(chatId, "Good morning!");
+      logMessage(`Sent daily reminder message to chat ID: ${chatId}`);
+    });
   },
   null,
   true,

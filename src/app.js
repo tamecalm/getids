@@ -9,8 +9,17 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Basic health check route
-app.get("/health", (req, res) => {
-  res.status(200).send("Bot is running!");
+app.get("/health", async (req, res) => {
+  try {
+    const botInfo = await bot.getMe();
+    if (botInfo) {
+      res.status(200).send("Bot is running!");
+    } else {
+      res.status(500).send("Bot is not responding.");
+    }
+  } catch {
+    res.status(500).send("Bot is not responding.");
+  }
 });
 
 // Start Express server

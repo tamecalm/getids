@@ -1,4 +1,4 @@
-import Admin from "../models/adminModel.js";
+import Admin from "../models/adminModel1.js";
 
 export const login = async (req, res) => {
   const { id } = req.body;

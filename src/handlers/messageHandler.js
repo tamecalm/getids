@@ -43,6 +43,16 @@ export default (bot, message) => {
       bot.sendMessage(chat.id, `🗣️ This Group ID is: <code>${chat.id}</code>`, {
         parse_mode: "HTML",
       });
+      // For reply to use text in the groups and supergroups then it should return the quoted reply message user id
+      if (message.reply_to_message) {
+        bot.sendMessage(
+          chat.id,
+          `👤 Replied User ID is: <code>${message.reply_to_message.from.id}</code>`,
+          {
+            parse_mode: "HTML",
+          }
+        );
+      }
     } else if (chat.type === "channel") {
       // For channels (Channel ID)
       bot.sendMessage(

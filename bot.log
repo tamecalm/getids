@@ -77,3 +77,24 @@
 2025-02-06T12:29:09.850Z - Unhandled Rejection: Error: ETELEGRAM: 400 Bad Request: chat not found
 2025-02-06T12:40:37.921Z - Bot shutting down...
 2025-02-06T12:40:55.484Z - Bot started successfully
+2025-02-06T13:12:18.672Z - Polling Error: EFATAL: Error: read ETIMEDOUT
+2025-02-06T13:12:28.993Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:12:39.314Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:12:49.628Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:12:59.943Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:13:10.259Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:13:20.579Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:13:31.140Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:13:41.468Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:13:51.784Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:14:02.098Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:14:12.413Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:14:44.962Z - Polling Error: EFATAL: Error: read ETIMEDOUT
+2025-02-06T13:14:55.277Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:15:05.594Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:15:15.908Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:15:26.223Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:15:36.539Z - Polling Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+2025-02-06T13:19:51.874Z - Bot shutting down...
+2025-02-06T13:19:55.174Z - Bot started successfully
+2025-02-06T13:24:13.870Z - Bot restart triggered by user

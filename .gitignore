@@ -6,3 +6,6 @@ bot.log
 
 # Ignore node_modules directory
 node_modules/
+
+# Ignore chatIds.json file
+chatIds.json

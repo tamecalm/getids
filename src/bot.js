@@ -12,6 +12,7 @@ const bot = new TelegramBot(botToken, { polling: true });
 bot.on("message", (message) => routeUpdates(bot, message));
 
 // Listen for callback queries (inline button presses)
+/*
 bot.on("callback_query", (callbackQuery) => {
   const { data, message, from } = callbackQuery;
   const { chat, message_id } = message;
@@ -50,6 +51,7 @@ bot.on("callback_query", (callbackQuery) => {
     console.error(error); // Log error for debugging
   }
 });
+*/
 
 // Export bot to be used in other files
 export default bot;
